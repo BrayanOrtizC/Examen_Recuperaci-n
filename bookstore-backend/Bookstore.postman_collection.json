@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "Bookstore Backend",
+    "_postman_id": "b4f5f2f3-aaaa-bbbb-cccc-ddddeeefff00",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear autor",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/authors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "authors"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nombre\": \"Isabel Allende\", \"nacionalidad\": \"Chile\"}"
+        }
+      }
+    },
+    {
+      "name": "Listar libros",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Crear libro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"La casa de los espíritus\", \"precio\": 25.5, \"fechaPublicacion\": \"1982-01-01\", \"authorId\": 1}"
+        }
+      }
+    },
+    {
+      "name": "Libros por autor (id=1)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/books/author/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books",
+            "author",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Crear libro (precio inválido)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"Malo\", \"precio\": 0, \"fechaPublicacion\": \"2020-01-01\", \"authorId\": 1}"
+        }
+      }
+    }
+  ]
+}
